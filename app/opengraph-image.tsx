@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt =
   "Chettiyar Chekku Oil — 100% Vagai Wood Pressed Marachekku Oils";
 export const size = { width: 1200, height: 630 };
@@ -34,6 +33,7 @@ export default async function Image() {
         >
           <div
             style={{
+              display: "flex",
               backgroundColor: "#2A1810",
               border: "2px solid #D97706",
               color: "#FBBF24",
@@ -48,6 +48,7 @@ export default async function Image() {
           </div>
           <div
             style={{
+              display: "flex",
               backgroundColor: "#1F4E3D",
               color: "#FAF6F0",
               padding: "10px 24px",
@@ -61,9 +62,16 @@ export default async function Image() {
         </div>
 
         {/* Center Headline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "18px",
+          }}
+        >
           <div
             style={{
+              display: "flex",
               fontSize: 74,
               fontWeight: 800,
               lineHeight: 1.08,
@@ -74,6 +82,7 @@ export default async function Image() {
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: 38,
               color: "#D97706",
               fontStyle: "italic",
@@ -83,6 +92,7 @@ export default async function Image() {
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: 24,
               color: "#E5D5C5",
               maxWidth: "920px",
