@@ -1082,21 +1082,24 @@ export default function ChettiyarChekkuOilStore() {
 
       {/* Sticky Glassmorphic Navbar */}
       <header className="sticky top-0 z-40 bg-[#FAF6F0]/85 backdrop-blur-md border-b border-[#2A1810]/10 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
           {/* Brand Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-3 text-left group focus:outline-none"
+            className="flex min-w-0 items-center gap-2 sm:gap-3 text-left group focus:outline-none"
           >
-            <div className="p-1.5 rounded-full bg-[#F3ECE1] border border-[#D97706]/30 group-hover:border-[#D97706] transition-colors">
-              <MarachekkuEmblemSVG className="w-10 h-10" />
+            <div className="shrink-0 p-1 sm:p-1.5 rounded-full bg-[#F3ECE1] border border-[#D97706]/30 group-hover:border-[#D97706] transition-colors">
+              <MarachekkuEmblemSVG className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <div>
-              <span className="block font-serif-heritage text-2xl sm:text-3xl font-bold tracking-tight text-[#2A1810] leading-none">
+            <div className="min-w-0">
+              <span className="block whitespace-nowrap font-serif-heritage text-xl sm:text-3xl font-bold tracking-tight text-[#2A1810] leading-none">
                 Chettiyar Chekku
               </span>
-              <span className="block text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-[#6E5648] mt-1 uppercase">
+              <span className="hidden lg:block text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-[#6E5648] mt-1 uppercase">
                 EST. TRADITION • VANNIYA CHETTIYAR HERITAGE
+              </span>
+              <span className="block lg:hidden text-[9px] font-semibold tracking-[0.12em] text-[#6E5648] mt-1 uppercase">
+                VAGAI WOOD PRESSED
               </span>
             </div>
           </button>
@@ -1140,17 +1143,18 @@ export default function ChettiyarChekkuOilStore() {
           </nav>
 
           {/* Interactive Cart Button */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-3">
             <button
               onClick={() => setIsOrdersModalOpen(true)}
-              className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-[#F3ECE1] hover:bg-[#D97706]/15 text-[#2A1810] border border-[#D97706]/30 text-xs font-bold transition-all"
+              aria-label={`View orders (${orders.length})`}
+              className="inline-flex items-center gap-2 px-2 sm:px-3.5 py-2.5 rounded-full bg-[#F3ECE1] hover:bg-[#D97706]/15 text-[#2A1810] border border-[#D97706]/30 text-xs font-bold transition-all"
             >
               <Package className="w-4 h-4 text-[#D97706]" />
-              <span>Orders ({orders.length})</span>
+              <span className="hidden lg:inline">Orders ({orders.length})</span>
             </button>
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative inline-flex items-center gap-3 bg-[#1C110A] hover:bg-[#2A1810] text-[#FAF6F0] px-4 py-2.5 rounded-full shadow-md hover:shadow-lg border border-amber-500/30 transition-all group"
+              className="relative inline-flex items-center gap-2 sm:gap-3 bg-[#1C110A] hover:bg-[#2A1810] text-[#FAF6F0] px-3 sm:px-4 py-2.5 rounded-full shadow-md hover:shadow-lg border border-amber-500/30 transition-all group"
               aria-label="Open shopping cart"
             >
               <div className="relative">
@@ -1161,7 +1165,7 @@ export default function ChettiyarChekkuOilStore() {
                   </span>
                 )}
               </div>
-              <div className="text-left leading-tight">
+              <div className="hidden lg:block text-left leading-tight">
                 <span className="block text-[10px] uppercase tracking-wider text-amber-200/70">
                   {cartMetrics.totalItems}{" "}
                   {cartMetrics.totalItems === 1 ? "Vessel" : "Vessels"}
@@ -1182,7 +1186,7 @@ export default function ChettiyarChekkuOilStore() {
             initial={{ opacity: 0, y: -20, x: 20 }}
             animate={{ opacity: 1, y: 0, x: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-24 right-4 z-50 bg-[#1F4E3D] text-[#FAF6F0] px-4 py-3 rounded-xl shadow-2xl border border-emerald-400/30 flex items-center gap-3 max-w-sm"
+            className="fixed top-24 left-4 right-4 sm:left-auto z-50 bg-[#1F4E3D] text-[#FAF6F0] px-4 py-3 rounded-xl shadow-2xl border border-emerald-400/30 flex items-center gap-3 sm:max-w-sm"
           >
             <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center shrink-0">
               <Check className="w-4 h-4 text-amber-300" />
@@ -1321,9 +1325,9 @@ export default function ChettiyarChekkuOilStore() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="lg:col-span-5"
             >
-              <div className="relative rounded-3xl bg-gradient-to-b from-[#F3ECE1] via-[#FAF6F0] to-[#F3ECE1] p-6 sm:p-7 border border-[#D97706]/30 shadow-2xl">
+              <div className="relative rounded-3xl bg-gradient-to-b from-[#F3ECE1] via-[#FAF6F0] to-[#F3ECE1] p-4 sm:p-7 border border-[#D97706]/30 shadow-2xl">
                 {/* Inspector Header Bar */}
-                <div className="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-[#2A1810]/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-4 mb-4 border-b border-[#2A1810]/10">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#1F4E3D] animate-ping" />
                     <span className="text-xs font-bold uppercase tracking-wider text-[#1F4E3D]">
@@ -1336,9 +1340,9 @@ export default function ChettiyarChekkuOilStore() {
                 </div>
 
                 {/* Central Visual Showcase with Floating Glassmorphic Badges */}
-                <div className="relative h-80 sm:h-88 flex items-center justify-center">
+                <div className="relative flex flex-col items-stretch gap-3 sm:h-88 sm:flex-row sm:items-center sm:justify-center sm:gap-0">
                   {/* Main Bottle/Tin SVG */}
-                  <div className="w-60 h-64 sm:w-64 sm:h-72">
+                  <div className="w-52 h-56 sm:w-64 sm:h-72 shrink-0 self-center">
                     <ProductVesselSVG
                       product={PRODUCTS[0]}
                       volume={
@@ -1351,7 +1355,7 @@ export default function ChettiyarChekkuOilStore() {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     onClick={() => setActiveInspectorNote(0)}
-                    className={`absolute top-2 left-0 sm:-left-3 max-w-[215px] text-left p-3 rounded-2xl backdrop-blur-md border transition-all shadow-lg ${
+                    className={`relative w-full sm:absolute sm:top-2 sm:-left-3 sm:max-w-[215px] text-left p-3 rounded-2xl backdrop-blur-md border transition-all shadow-lg ${
                       activeInspectorNote === 0
                         ? "bg-[#1C110A]/90 text-[#FAF6F0] border-[#D97706]"
                         : "bg-[#FAF6F0]/85 text-[#2A1810] border-[#2A1810]/15"
@@ -1370,7 +1374,7 @@ export default function ChettiyarChekkuOilStore() {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     onClick={() => setActiveInspectorNote(1)}
-                    className={`absolute top-1/2 -translate-y-1/2 right-0 sm:-right-3 max-w-[210px] text-left p-3 rounded-2xl backdrop-blur-md border transition-all shadow-lg ${
+                    className={`relative w-full sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:-right-3 sm:max-w-[210px] text-left p-3 rounded-2xl backdrop-blur-md border transition-all shadow-lg ${
                       activeInspectorNote === 1
                         ? "bg-[#1C110A]/90 text-[#FAF6F0] border-[#D97706]"
                         : "bg-[#FAF6F0]/85 text-[#2A1810] border-[#2A1810]/15"
@@ -1389,7 +1393,7 @@ export default function ChettiyarChekkuOilStore() {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     onClick={() => setActiveInspectorNote(2)}
-                    className={`absolute bottom-2 left-1 sm:left-0 max-w-[235px] text-left p-3 rounded-2xl backdrop-blur-md border transition-all shadow-lg ${
+                    className={`relative w-full sm:absolute sm:bottom-2 sm:left-0 sm:max-w-[235px] text-left p-3 rounded-2xl backdrop-blur-md border transition-all shadow-lg ${
                       activeInspectorNote === 2
                         ? "bg-[#1C110A]/90 text-[#FAF6F0] border-[#D97706]"
                         : "bg-[#FAF6F0]/85 text-[#2A1810] border-[#2A1810]/15"
@@ -1407,7 +1411,7 @@ export default function ChettiyarChekkuOilStore() {
 
                 {/* Interactive Telemetry Readout Footer */}
                 <div className="mt-4 pt-4 border-t border-[#2A1810]/10 bg-[#FAF6F0] rounded-2xl p-4">
-                  <div className="flex items-center justify-between text-xs text-[#6E5648] mb-2">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-xs text-[#6E5648] mb-2">
                     <span className="font-semibold text-[#2A1810]">
                       {activeInspectorNote === 0 &&
                         "Why Udangudi Karupatti?"}
@@ -1430,7 +1434,7 @@ export default function ChettiyarChekkuOilStore() {
                   </p>
 
                   {/* Quick Add from Inspector */}
-                  <div className="mt-3 pt-3 border-t border-[#2A1810]/10 flex items-center justify-between">
+                  <div className="mt-3 pt-3 border-t border-[#2A1810]/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       <span className="text-[11px] text-[#6E5648] block">
                         Flagship Karupatti Nallenai (1L)
@@ -1444,7 +1448,7 @@ export default function ChettiyarChekkuOilStore() {
                     </div>
                     <button
                       onClick={() => handleAddToCart(PRODUCTS[0], "1L")}
-                      className="px-4 py-2 rounded-full bg-[#1C110A] hover:bg-[#D97706] text-[#FAF6F0] hover:text-[#1C110A] text-xs font-bold transition-colors flex items-center gap-1.5"
+                      className="w-full sm:w-auto justify-center px-4 py-2 rounded-full bg-[#1C110A] hover:bg-[#D97706] text-[#FAF6F0] hover:text-[#1C110A] text-xs font-bold transition-colors flex items-center gap-1.5"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       Add 1L to Cart
@@ -1822,7 +1826,7 @@ export default function ChettiyarChekkuOilStore() {
                     <div>
                       {/* Top Visual & Telemetry Banner */}
                       <div className="relative bg-gradient-to-b from-[#F3ECE1] to-[#FAF6F0] p-6 pt-5 border-b border-[#2A1810]/8">
-                        <div className="flex items-center justify-between gap-2 mb-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1F4E3D] text-[#FAF6F0] text-[11px] font-bold">
                             <Clock className="w-3 h-3 text-amber-300" />
                             Fresh Batch: Crushed {product.batchDaysAgo} days ago
@@ -1967,7 +1971,7 @@ export default function ChettiyarChekkuOilStore() {
                       </div>
 
                       {/* Price Display & Add to Cart Button */}
-                      <div className="pt-2 flex items-center justify-between gap-4 border-t border-[#2A1810]/10">
+                      <div className="pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 border-t border-[#2A1810]/10">
                         <div>
                           <div className="flex items-baseline gap-2">
                             <span className="font-serif-heritage text-3xl font-bold text-[#2A1810]">
@@ -1989,7 +1993,7 @@ export default function ChettiyarChekkuOilStore() {
                           onClick={() =>
                             handleAddToCart(product, activeVolKey)
                           }
-                          className={`px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-md ${
+                          className={`w-full sm:w-auto justify-center px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-md ${
                             isAdded
                               ? "bg-[#1F4E3D] text-white"
                               : "bg-[#D97706] hover:bg-[#B45309] text-white"
@@ -2472,7 +2476,7 @@ export default function ChettiyarChekkuOilStore() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg rounded-3xl bg-[#FAF6F0] text-[#2A1810] border border-[#D97706]/40 shadow-2xl overflow-hidden"
+              className="w-full max-h-[calc(100dvh-2rem)] max-w-lg overflow-y-auto rounded-3xl bg-[#FAF6F0] text-[#2A1810] border border-[#D97706]/40 shadow-2xl"
             >
               {/* Header */}
               <div className="bg-[#1C110A] text-[#FAF6F0] p-5 flex items-center justify-between">
@@ -2656,7 +2660,7 @@ export default function ChettiyarChekkuOilStore() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-3xl max-h-[85vh] rounded-3xl bg-[#FAF6F0] text-[#2A1810] border border-[#D97706]/40 shadow-2xl overflow-hidden flex flex-col"
+              className="w-full max-w-3xl max-h-[calc(100dvh-2rem)] rounded-3xl bg-[#FAF6F0] text-[#2A1810] border border-[#D97706]/40 shadow-2xl overflow-hidden flex flex-col"
             >
               <div className="bg-[#1C110A] text-[#FAF6F0] p-5 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-3">
@@ -2796,7 +2800,7 @@ export default function ChettiyarChekkuOilStore() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="w-full max-w-xl rounded-3xl bg-[#1C110A] text-[#FAF6F0] border border-amber-500/30 p-6 sm:p-8 shadow-2xl space-y-6"
+              className="w-full max-h-[calc(100dvh-2rem)] max-w-xl overflow-y-auto rounded-3xl bg-[#1C110A] text-[#FAF6F0] border border-amber-500/30 p-5 sm:p-8 shadow-2xl space-y-6"
             >
               <div className="flex items-center justify-between border-b border-amber-500/20 pb-4">
                 <div>
