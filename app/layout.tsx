@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://chettiyarchekku.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://chettiyarchekku.in";
 
 export const viewport: Viewport = {
   themeColor: "#1C110A",
